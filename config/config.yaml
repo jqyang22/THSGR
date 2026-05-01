@@ -1,0 +1,29 @@
+model:
+  model_name: "THSGR"
+data_input:
+  dataset_name: Houston_2013
+  classes: 15
+  patch_size: 15
+  path_data: ./HSI/
+  path_data_LiDAR: ./HSI+LiDAR/
+data_split:
+  split_type: number
+  train_num: 50
+  val_num: 0
+  train_ratio: 0.1
+  val_ratio: 0
+data_transforms:
+  num_components: 32
+  batch_size: 256
+  remove_zero_labels: True
+network_config:
+  max_epoch: 120
+  learning_rate: 0.01
+  weight_decay: 0.001
+  lb_smooth: 0.01
+  num_nodes: 1
+result_output:
+  data_info_start: 1
+  log_interval: 20
+  path_weight: ./Houston_2013/HSI_LiDAR/
+  path_result: ./Houston_2013/HSI_LiDAR/
